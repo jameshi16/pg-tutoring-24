@@ -1,0 +1,104 @@
+* Tutor Session Week 1
+
+* Before we start
+- Attendance Taking
+- Communication Platform
+- Tie down a good day to hold sessions (2hrs / 2 1hr sessions)
+
+* Quick Expectations
+- ? I can't do your coursework for you
+- ? I can help you /learn/ programming
+- ? I can provide general curriculum assistance
+- ? I can help you convert to Emacs (better than Vim by the way, ong
+  no cap)
+- ? I can help you convert to Linux, or at least WSL
+
+* Who am I?
+
+I'm James.
+
+Blog: https://codingindex.xyz
+GitHub: https://github.com/jameshi16
+
+Fun fact about me: I have no social media
+
+Favourite Language: At the moment it's Rust
+
+* Introduce yourselves
+
+- Name
+- Programming Experience
+- Proudest Technical Achievement
+
+* Your first term
+
+- Introduction to Programming (C, later on Haskell)
+- Engineering Challenges (C++)
+- Design & Professional Skills (Python)
+
+* Your second term
+
+- Data Structures & Algorithms (Python)
+- Object Oriented Programming (Java)
+
+* Hello world examples
+
+C:
+#+BEGIN_SRC c
+  #include "stdio.h"
+
+  int main() {
+    printf("hello, world\n");
+    return 0;
+  }
+#+END_SRC
+
+Haskell:
+#+BEGIN_SRC haskell
+  putStrLn "hello, world"
+#+END_SRC
+
+C++:
+#+BEGIN_SRC c++
+  #include <stdio>
+  using namespace std;
+
+  int main() {
+    cout << "hello, world" << endl;
+    return 0;
+  }
+#+END_SRC
+
+Python:
+#+BEGIN_SRC python
+  print("hello, world")
+#+END_SRC
+
+* Fibonacci example
+
+C:
+#+BEGIN_SRC c
+  #include "stdio.h"
+
+  int fib(int x) {
+    if (x == 0) return 0;
+    if (x == 1 || x == 2) return 1;
+    return fib(x - 1) + fib(x - 2);
+  }
+
+  int main() {
+    printf("%d\n", fib(2));
+    return 0;
+  }
+#+END_SRC
+
+Haskell:
+#+BEGIN_SRC haskell
+  fib :: (Integral a) => a -> a
+  fib 0 = 0
+  fib 1 = 1
+  fib 2 = 1
+  fib x = (fib (x - 1)) + (fib (x - 2))
+#+END_SRC
+
+* Questions about your first week?
