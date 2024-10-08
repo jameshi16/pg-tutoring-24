@@ -6,12 +6,12 @@
 - Tie down a good day to hold sessions (2hrs / 2 1hr sessions)
 
 * Quick Expectations
-- ? I can't do your coursework for you
-- ? I can help you /learn/ programming
-- ? I can provide general curriculum assistance
-- ? I can help you convert to Emacs (better than Vim by the way, ong
+- ❌ I can't do your coursework for you
+- ✅ I can help you /learn/ programming
+- ✅ I can provide general curriculum assistance
+- ✅ I can help you convert to Emacs (better than Vim by the way, ong
   no cap)
-- ? I can help you convert to Linux, or at least WSL
+- ✅ I can help you convert to Linux, or at least WSL
 
 * Who am I?
 
@@ -23,6 +23,8 @@ GitHub: https://github.com/jameshi16
 Fun fact about me: I have no social media
 
 Favourite Language: At the moment it's Rust
+
+I have other secrets as well, try to find out :^)
 
 * Introduce yourselves
 
