@@ -1,0 +1,133 @@
+* Tutor Session Week 16
+
+** What's happening in Term 2?
+
+Programming related:
+- Algorithms
+- Object-Oriented Programming
+
+Non-programming related:
+- Theory of Computation
+- maf
+- Some ENGF
+
+** Algorithms
+
+Textbook has lots of proofs. Some are hard.
+
+*** Symbol Tables
+- Key-values
+- Keys need to have *total order relation*, i.e. anti-symmetry (if a <= b and b <= a, then a = b),
+  if a <= b and b <= c then a <= c, transitivity, and totality (either a <= b or b <= a, nothing else)
+- Implementations:
+  - Linked List (get, put, cost N for both)
+  - Ordered Arrays (get use bin search, put use insertion sort. lg N, N)
+  - Another possible implementation?
+- Why assume key have total order?
+  - Can implement other things, such as Min/max, Ordered Iteration, Floor / ceiling, Rank, Selectg
+
+*** Binary Trees
+- Complete Binary Tree: N nodes, height of lgN (provable)
+  - Always have left filled before right
+  - Hence, always expressible as an array
+- Binary Search Tree are Binary Trees in symmetric order
+  - Large keys left, small keys right
+  - Can be implemented with Symbol Tables (key being key, value being a tuple of two nodes)
+  - Get: clgN
+    Put: clgN
+    Why C?
+- What other operations can you implement? (hint, you've already seen this)
+
+*** Binary Trees Part 2
+
+Floor: Remember right turns
+1. If node is leaf, return last recorded node
+2. If key less than node, turn left
+3. If key more than node, remember the node, then turn right
+
+Ceiling: Remember left turns
+1. If node is leaf, return last recorded node
+2. If key less than node, remember the node and turn left
+3. If key more than node, turn right
+
+How to do deletion?
+
+*** Hibbard deletion
+
+Helper:
+1. Go all the way left
+2. If left node null, return right node
+3. If not, assign left node to return value of helper(left node)
+
+Deletion:
+1. Find node that has the key (search)
+2. Case 0: node no children
+   Set parent to null (or if creating a new tree, return null)
+3. Case 1: node has 1 child
+   Set parent link to child
+4. Case 2: node has 2 children
+   Copy & delete minimum key using helper function
+   - essentially finds successor of the current node, discards it, and copies the value
+   Replace current node with minimum key
+
+Cost: sqrt N. why? idk
+
+*** Sorting Algorithms
+
+These are generally quite simple, you should be able to pick them up from lectures.
+- Selection Sort
+- Insertion Sort
+- Merge Sort
+- Quick Sort
+- Heap Sort
+
+*** Queues
+
+FIFO data structures, with a tail and a head.
+
+Priority queues are the generalized version, where each item is now associated to a priority.
+
+Extremely important data structure, especially in graph search
+
+Possible implementations:
+- Array & Sort: NLogN time
+- With lists: MN time
+- Binary Heap: NlogM
+
+*** Binary Heap
+
+Is a complete binary tree.
+
+Must also have the following properties:
+- Highest/lowest (depending on orientation) priority is at a[1], the root
+- Parent key is >= all children
+- Priorities are stored in the nodes themselves
+
+*** Search Algorithms
+
+You will be covering Binary Search Trees, 2-3 trees, Red-black trees, and Hash Tables.
+
+*** Graph Algorithms
+
+This will need an entire lesson on its own, but you'll be covering them!
+
+- Undirected Graphs (i.e. bidirectional)
+  - DFS, BFS (find all vertices connected), Connected Componentns
+  - Different ways to implement them: Adjacency List, Matrix Representation
+- Directed Graphs
+  - DFS, BFS, Topological Order (redraw all arrows such that they point upwards. all DAGs have at least one), DAG Detection, Strongly-Connected Components with Kosaraju-Sharir
+- Minimum Spanning Tree
+  - Greedy Algorithm
+  - Kruskal's Algorithm
+  - Prim's Algorithm
+- Shortest Path (directed equiv of MST)
+  - Edge-weighted DAG using topological sort: useful for no Cycles
+  - Dijkstra (binary heap): useful for no negative weights
+  - Bellman-Ford: useful for no negative cycles
+
+*** String Algorithms
+
+- Sorting: LSD & MSD radix sorts
+- Searching: R-way tries, 3-way tries
+- Sub-string seaching: Brute force, Knuth-Morris-Pratt algorithm, Boyer-Morre
+- Compression: Run-Length Coding, Huffman Compression (uses tries!)
